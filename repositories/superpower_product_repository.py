@@ -64,3 +64,16 @@ def superpower_products_from_manufacturer(manufacturer):
         superpower_products.append(superpower_product)
     return superpower_products
 
+# low stock alert function
+def superpower_product_low_stock(superpower_product):
+    superpower_product = []
+
+    sql = "SELECT * FROM superpower_products = %s"
+    values = [superpower_product.id]
+    results = run_sql(sql, values)
+
+    
+
+# out of stock alert function
+
+
