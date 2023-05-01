@@ -3,7 +3,7 @@ from db.run_sql import run_sql
 from models.Manufacturer import Manufacturer
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers (name, description, email_address, location) VALUES (%s, %s, %s, %s)"
+    sql = "INSERT INTO manufacturers (name, description, email_address, location) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [manufacturer.name, manufacturer.description, manufacturer.email_address, manufacturer.location]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -25,7 +25,7 @@ def select(id):
     manufacturer = None
     sql = "SELECT * FROM manufacturers WHERE id = %s"
     values = [id]
-    results = run_sql(sql_values)
+    results = run_sql(sql, values)
 
     if results:
         result = results[0]

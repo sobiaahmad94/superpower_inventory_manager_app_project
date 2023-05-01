@@ -4,9 +4,10 @@ from models.Manufacturer import Manufacturer
 from models.SuperpowerProduct import SuperpowerProduct
 import repositories.manufacturer_repository as manufacturer_repository
 
+
 def save(superpower_product):
-    sql = "INSERT INTO superpower_products (name, description, stock_quantity, buying_cost, selling_cost, manufacturer_id) VALUES (%s, %s, %s, %s, %s, %s"
-    values = [superpower_product.name, superpower_product.description, superpower_product.stock_quantity, superpower_product.selling_cost, superpower_product.manufacturer_id]
+    sql = "INSERT INTO superpower_products (name, description, stock_quantity, buying_price, selling_price, manufacturer_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [superpower_product.name, superpower_product.description, superpower_product.stock_quantity, superpower_product.buying_price, superpower_product.selling_price, superpower_product.manufacturer.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     superpower_product.id = id
@@ -20,7 +21,7 @@ def select_all():
 
     for row in results: 
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        superpower_product = SuperpowerProduct(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], manufacturer, row['id'])
+        superpower_product = SuperpowerProduct(row['name'], row['description'], row['stock_quantity'], row['buying_price'], row['selling_price'], manufacturer, row['id'])
         superpower_products.append(superpower_product)
     return superpower_products
 
@@ -65,12 +66,12 @@ def superpower_products_from_manufacturer(manufacturer):
     return superpower_products
 
 # low stock alert function
-def superpower_product_low_stock(superpower_product):
-    superpower_product = []
+# def superpower_product_low_stock(superpower_product):
+#     superpower_product = []
 
-    sql = "SELECT * FROM superpower_products = %s"
-    values = [superpower_product.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT * FROM superpower_products = %s"
+#     values = [superpower_product.id]
+#     results = run_sql(sql, values)
 
     
 
