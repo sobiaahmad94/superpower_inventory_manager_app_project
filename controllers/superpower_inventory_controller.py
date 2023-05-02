@@ -7,8 +7,9 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 superpower_products_blueprint = Blueprint('superpower_products', __name__)
 
-# index
+# superpower_products index
 @superpower_products_blueprint.route('/superpower_products')
 def superpower_products():
     superpower_products = superpower_product_repository.select_all()
     return render_template('superpower_products/index.jinja', all_superpower_products = superpower_products)
+

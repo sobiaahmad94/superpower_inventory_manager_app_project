@@ -1,1 +1,19 @@
-<h1>All the superpower products</h1>
+{% extends "base.jinja" %}
+
+{% block navbar %}
+<nav>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('superpower_products.superpower_products') }}">Superpower Product Inventory</a></li>
+        {# <li><a href="{{ url_for('superpower_products.superpower_products') }}">Add  New Items</a></li> #}
+        <li><a href="">Edit Item</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <h1>This is where you can view all of our superpower inventory!</h1>
+{% endblock %}
+
+

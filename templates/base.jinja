@@ -8,15 +8,9 @@
 </head>
 <body>
     <header>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('superpower_products.superpower_products') }}">Superpower Product Inventory</a></li>
-            {# <li><a href="{{ url_for('superpower_products.superpower_products') }}">Add  New Items</a></li> #}
-            <li><a href="">Edit Item</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </nav>
+    {% block navbar %}
+    {% endblock %}
+
     </header>
     <div class="container">
     {% block content %}

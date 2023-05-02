@@ -28,6 +28,8 @@ superpower_product_repository.save(superpower_product_2)
 superpower_product_3 = SuperpowerProduct("Rosy Cheeky Juice", "This shadow catcher drink enables you to be more confident - effects last for up to 48 hours.", 100, 14.0, 35.0, manufacturer_3)
 superpower_product_repository.save(superpower_product_3)
 
+# Checking that superpower_product select_all() function is working
+
 # all = superpower_product_repository.select_all()
 
 # for superpower_product in all:
