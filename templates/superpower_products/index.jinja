@@ -1,3 +1,4 @@
+{# This template shows all of the superpower products and other details #}
 {% extends "base.jinja" %}
 
 {% block navbar %}
@@ -6,6 +7,7 @@
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('superpower_products.superpower_products') }}">Superpower Product Inventory</a></li>
         {# <li><a href="{{ url_for('superpower_products.superpower_products') }}">Add  New Items</a></li> #}
+        <li><a href="http://www.localhost:4999/superpower_products/new">Add New Item</a></li>
         <li><a href="">Edit Item</a></li>
         <li><a href="">Contact</a></li>
     </ul>
@@ -13,7 +15,70 @@
 {% endblock %}
 
 {% block content %}
-    <h1>This is where you can view all of our superpower inventory!</h1>
+<main>
+    <h1>This is where you can view all of the superpower inventory!</h1>
+    <h1 class="heading">Here is a table of all of our superpower products!</h1>
+    
+    <table class="table-labels">
+        <th>Name:</th>
+        <th>Description:</th>
+        <th>Stock Quanity:</th>
+        <th>Buying Price:</th>
+        <th>Selling Price:</th>
+        <th>Manufacturer:</th>
+        <th>Product ID:</th>
+        <th>Stock Status:</th>
+        {% for superpower_product in superpower_products  %}
+
+        <tr>
+        <td>{{ superpower_product.name }}</td>
+        <td>{{ superpower_product.description }}</td>
+        <td>{{ superpower_product.stock_quantity }}</td>
+        
+
+        <td>{{ superpower_product.buying_price }}</td>
+        <td>{{ superpower_product.selling_price }}</td>
+        <td>{{ superpower_product.manufacturer.name }}</td>
+        <td>{{ superpower_product.id }}</td>
+
+        <td>
+       {% if superpower_product.stock_quantity <= 0 %}
+            <p class="out-of-stock">Out of Stock</p>
+        {% elif superpower_product.stock_quantity <= 5 %}
+            <p class="low-stock">Low Stock</p>  
+        {% else %}
+            <p class="stock-available">Stock Available</p>
+        {% endif %}
+        </td>
+
+{# 
+
+        {% if superpower_product.stock_quantity <= 5 %}
+            <p class="low-stock">Low Stock</p>
+        {% elif superpower_product.stock_quantity == 0 %}
+            <p class="out-of-stock">Out of Stock</p>
+        {% else %}
+            <p class="stock-available">Stock Available</p>
+        {% endif %} #}
+
+
+          {# self.name = name
+        self.description = description
+        self.stock_quantity = stock_quantity
+        self.buying_price = buying_price
+        self.selling_price = selling_price
+        self.manufacturer = manufacturer
+        self.id = id #}
+
+
+
+        {# <button type="hidden" href="">Delete This Superpower Product</button> what I tried to do here didn't work the way I wanted so I'll try again later #}
+        </tr>
+        {% endfor %}
+    </table>
+    
+</main>
+    
 {% endblock %}
 
 
