@@ -1,19 +1,6 @@
 {# This template shows all of the superpower products and other details #}
 {% extends "base.jinja" %}
 
-{% block navbar %}
-<nav>
-    <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('superpower_products.superpower_products') }}">Superpower Product Inventory</a></li>
-        {# <li><a href="{{ url_for('superpower_products.superpower_products') }}">Add  New Items</a></li> #}
-        <li><a href="http://www.localhost:4999/superpower_products/new">Add New Item</a></li>
-        <li><a href="">Edit Item</a></li>
-        <li><a href="">Contact</a></li>
-    </ul>
-</nav>
-{% endblock %}
-
 {% block content %}
 <main>
     <h1>This is where you can view all of the superpower inventory!</h1>
@@ -31,7 +18,8 @@
         {% for superpower_product in superpower_products  %}
 
         <tr>
-        <td>{{ superpower_product.name }}</td>
+        <td><a href="/superpower_products/{{ superpower_product.id }}">{{ superpower_product.name }}</a></td>
+
         <td>{{ superpower_product.description }}</td>
         <td>{{ superpower_product.stock_quantity }}</td>
         
@@ -39,7 +27,7 @@
         <td>{{ superpower_product.buying_price }}</td>
         <td>{{ superpower_product.selling_price }}</td>
         <td>{{ superpower_product.manufacturer.name }}</td>
-        <td>{{ superpower_product.id }}</td>
+        <td><a href="/superpower_products/{{ superpower_product.id }}">{{ superpower_product.id }}</a></td>
 
         <td>
        {% if superpower_product.stock_quantity <= 0 %}

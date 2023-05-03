@@ -35,7 +35,7 @@ def select(id):
     if results:
         result = results[0]
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        superpower_product = SuperpowerProduct(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], manufacturer, result['id'])
+        superpower_product = SuperpowerProduct(result['name'], result['description'], result['stock_quantity'], result['buying_price'], result['selling_price'], manufacturer, result['id'])
     return superpower_product
 
 def delete_all():

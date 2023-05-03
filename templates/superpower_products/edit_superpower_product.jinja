@@ -1,17 +1,16 @@
+{# This template allows the user to edit superpower_products #}
 {% extends "base.jinja" %}
 
 
 {% block content %}
-{# form to add new superpower product here#}
-{# name, description, stock_quantity,  buying_price, selling_price, manufacturer, id #}
-<h2>
+<p>Edit superpower products</p>
 <h2 class="heading">Add New Superpower Product To Inventory</h2>
-<form class="add-new-superpower-product-form" method="POST" action="/superpower_products">
+<form class="edit-superpower-product-form" method="POST" action="/superpower_products/{{superpower_product.id}}">
     <label for="superpower-product-name">Name:</label>
-    <input type="text" name="superpower-product-name" alt="superpower-product-name-input-box" required>
+    <input type="text" name="superpower-product-name" alt="superpower-product-name-input-box" required value="{{superpower_product.name}}">
 
     <label for="superpower-product-description">Description:</label>
-    <input type="text" name="superpower-product-description" alt="superpower-product-description-input-box" required>
+    <input type="text" name="superpower-product-description" alt="superpower-product-description-input-box" required value="{{superpower_product.description}}">
 
     <label for="superpower-product-stock-quantity">Stock Quantity:</label>
     <input type="text" name="superpower-product-stock-quantity" alt="superpower-product-stock-quantity-input-box">
@@ -23,7 +22,7 @@
     <input type="text" name="superpower-product-selling-price" alt="superpower-product-selling-price-input-box">
 
     <label for="superpower-product-manufacturer">Manufacturer:</label>
-    <select name="manufacturer-id">
+    <select name="manufacturer_id">
     {% for manufacturer in manufacturers %}
         <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
     {% endfor %}
@@ -32,22 +31,7 @@
     <input type="text" name="superpower-product-id" alt="superpower-product-id-input-box" required> #}
 
 
-    <input class="add-superpower-product-button" type="submit" value="Add New Superpower Product" alt="add-new-superpower-product-button">
+    <input class="edit-superpower-product-button" type="submit" value="Edit Superpower Product" alt="edit-new-superpower-product-button">
 </form>
-
-</h2>
-
-{# class SuperpowerProduct:
-    def __init__(self, name, description, stock_quantity, buying_price, selling_price, manufacturer, id = None):
-        self.name = name
-        self.description = description
-        self.stock_quantity = stock_quantity
-        self.buying_price = buying_price
-        self.selling_price = selling_price
-        self.manufacturer = manufacturer
-        self.id = id #}
-
-
-
 {% endblock %}
 
