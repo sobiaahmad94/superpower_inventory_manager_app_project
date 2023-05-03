@@ -50,7 +50,7 @@ def delete(id):
 
 def update(superpower_product):
     sql = "UPDATE superpower_products SET (name, description, stock_quantity, buying_cost, selling_cost, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [superpower_product.name, superpower_product.description, superpower_product.stock_quantity, superpower_product.buying_cost, superpower_product.selling_cost, superpower_product.manufacturer.id, superpower_product.id]
+    values = [superpower_product.name, superpower_product.description, superpower_product.stock_quantity, superpower_product.buying_price, superpower_product.selling_price, superpower_product.manufacturer.id, superpower_product.id]
     run_sql(sql, values)
 
 def superpower_products_from_manufacturer(manufacturer):
@@ -61,7 +61,7 @@ def superpower_products_from_manufacturer(manufacturer):
     results = run_sql(sql, values)
 
     for row in results:
-        superpower_product = SuperpowerProduct(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_cost'], row['manufacturer_id'], manufacturer, row['id'])
+        superpower_product = SuperpowerProduct(row['name'], row['description'], row['stock_quantity'], row['buying_price'], row['selling_price'], row['manufacturer_id'], manufacturer, row['id'])
         superpower_products.append(superpower_product)
     return superpower_products
 
@@ -73,8 +73,5 @@ def superpower_products_from_manufacturer(manufacturer):
 #     values = [superpower_product.id]
 #     results = run_sql(sql, values)
 
-    
-
-# out of stock alert function
 
 

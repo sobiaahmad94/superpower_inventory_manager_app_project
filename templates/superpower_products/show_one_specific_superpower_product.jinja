@@ -13,7 +13,8 @@
         <th>Selling Price:</th>
         <th>Manufacturer:</th>
         <th>Product ID:</th>
-        <th>Stock Status:</th>
+        <th>Edit:</th>
+        <th>Delete:</th>
         <tr>
         <td>{{ superpower_product.name }}</a></td>
         <td>{{ superpower_product.description }}</td>
@@ -24,6 +25,8 @@
         <td>{{ superpower_product.manufacturer.id }}</td>
         {# <td><a href="www.localhost:4999/superpower_products/<id>/edit">{{ superpower_product.id }}</a></td> #}
         <td><a href="http://localhost:4999/superpower_products/{{superpower_product.id}}/edit">Edit</a></td>
+        <td><a href="http://localhost:4999/superpower_products/{{superpower_product.id}}/delete">Delete</a></td>
+
 
 {% endblock %}
 

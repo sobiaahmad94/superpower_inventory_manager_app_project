@@ -74,6 +74,12 @@ def update_superpower_product(id):
 # DELETE
 # delete a superpower_product within the superpower_products inventory - superpower_products/<id>/delete
 # will use POST
+@superpower_products_blueprint.route('/superpower_products/<id>/delete', methods=['POST'])
+def delete_superpower_product(id):
+    superpower_product_repository.delete(id)
+    return redirect('/superpower_products')
 
-# smaproducts
+
+
+
 

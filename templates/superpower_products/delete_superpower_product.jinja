@@ -1,11 +1,11 @@
-{# This template allows the user to edit superpower_products #}
+{# This template allows the user to delete superpower_products #}
 {% extends "base.jinja" %}
 
 
 {% block content %}
-<p>Edit superpower products</p>
-<h2 class="heading">Add New Superpower Product To Inventory</h2>
-<form class="edit-superpower-product-form" method="POST" action="/superpower_products/{{superpower_product.id}}">
+<p>Delete superpower products</p>
+<h2 class="heading">Delete Superpower Product From Inventory</h2>
+<form class="delete-superpower-product-form" method="POST" action="/superpower_products/{{superpower_product.id}}">
     <label for="superpower-product-name">Name:</label>
     <input type="text" name="superpower-product-name" alt="superpower-product-name-input-box" required value="{{superpower_product.name}}">
 
@@ -31,7 +31,7 @@
     <input type="text" name="superpower-product-id" alt="superpower-product-id-input-box" required> #}
 
 
-    <input class="edit-superpower-product-button" type="submit" value="Save Your Edit" alt="edit-new-superpower-product-button">
+    <input class="delete-superpower-product-button" type="submit" value="Delete Item" alt="delete-superpower-product-button">
 </form>
 {% endblock %}
 

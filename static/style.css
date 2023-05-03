@@ -1,0 +1,161 @@
+
+ /* fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100&display=swap');
+
+/* all selectors */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(25, 25, 25);
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    color: rgb(255, 255, 255);
+
+}
+
+#logo {
+    color: rgb(24, 157, 132);
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: 700;
+    font-family: 'Anuphan', sans-serif;
+    cursor: pointer;
+}
+
+#logo:hover {
+    color: rgb(87, 133, 123);
+}
+
+span {
+    font-style: underline; /* why didn't this work? :S I only have one span */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+/* navbar */
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    color: rgb(24, 157, 132);
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li:hover {
+    color: rgb(180, 184, 183);
+    cursor: pointer;
+}
+
+a {
+    color:rgb(255, 255, 255);
+    list-style: none; /* not sure why the underline isn't disappearing */
+}
+
+a:hover {
+    color:rgb(24, 157, 132);
+}
+
+/* home photos as they're all unequal sizes rn */
+/* img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 320px;
+} */
+
+
+/* table and td etc (entries in table) */
+
+
+th {
+    color:rgb(24, 157, 132);
+    margin: 0;
+    padding: 20px;
+}
+
+td {
+    
+    margin: 0;
+    padding: 20px;
+} 
+
+table {
+    display: flex;
+    padding: 40px;
+    margin: 20px;
+}
+
+/* the wee headings, my class broke somewhere so I opted for using the h2 instead */
+
+.heading {
+    display: flex;
+    align-items: left;
+    padding: 20px;
+    margin: 10px;
+    font-size: 30px;
+}
+
+h3 {
+    color:rgb(24, 157, 132);
+}
+
+/* forms - applies to the add new book form and the remove book form */
+
+form {
+    font-size: 20px;
+    padding: 20px;
+}
+
+form >label {
+    margin-top: 90px;
+}
+
+form >input {
+    color: rgb(24, 157, 132);
+    display: flex;
+    align-content: space-between;
+    font-size: 20px;
+    outline: rgb(24, 157, 132); /* not working so will return to this line */
+}
+
+button {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    padding: 12px;
+    cursor: pointer;
+    background-color: rgb(24, 157, 132);
+    color:rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+button:hover {
+    color: rgb(24, 157, 132);
+    background-color:rgb(255, 255, 255);
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    background-color:rgb(215, 67, 67);
+}
+
+/* any general buttons as I'd like them to be the same except, I just want the add/remove buttons to be a bit bigger */
+/* button {
+    padding: 10px;
+    font-size: 10px;
+}
+ */
