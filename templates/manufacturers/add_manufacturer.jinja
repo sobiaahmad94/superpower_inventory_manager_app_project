@@ -1,0 +1,32 @@
+{% extends "base.jinja" %}
+
+
+{% block content %}
+{# form to add new manufacturer here#}
+{# name, description, email_address,  location, id #}
+<h2>
+<h2 class="heading">Add New Manufacturer To Inventory</h2>
+<form class="add-new-manufacturer-form" method="POST" action="/manufacturers">
+    <label for="manufacturer-name">Name:</label>
+    <input type="text" name="manufacturer-name" alt="manufacturer-name-input-box" required>
+
+    <label for="manufacturer-description">Description:</label>
+    <input type="text" name="manufacturer-description" alt="manufacturer-description-input-box" required>
+
+    <label for="manufacturer-email-address">Email Address:</label>
+    <input type="text" name="manufacturer-email-address" alt="manufacturer-email-address-input-box">
+
+    <label for="manufacturers-location">Location:</label>
+    <input type="text" name="manufacturers-location" alt="manufacturers-location-input-box">
+
+    {# <label for="superpower-product-superpower-product-id">Product ID:</label>
+    <input type="text" name="superpower-product-id" alt="superpower-product-id-input-box" required> #}
+
+    <input class="add-manufacturer-button" type="submit" value="Add New Manufacturer" alt="add-new-manufacturer-button">
+</form>
+</h2>
+
+
+
+{% endblock %}
+

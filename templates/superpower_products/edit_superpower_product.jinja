@@ -4,7 +4,7 @@
 
 {% block content %}
 <p>Edit superpower products</p>
-<h2 class="heading">Add New Superpower Product To Inventory</h2>
+<h2 class="heading">Edit Superpower In Inventory</h2>
 <form class="edit-superpower-product-form" method="POST" action="/superpower_products/{{superpower_product.id}}">
     <label for="superpower-product-name">Name:</label>
     <input type="text" name="superpower-product-name" alt="superpower-product-name-input-box" required value="{{superpower_product.name}}">
@@ -13,13 +13,13 @@
     <input type="text" name="superpower-product-description" alt="superpower-product-description-input-box" required value="{{superpower_product.description}}">
 
     <label for="superpower-product-stock-quantity">Stock Quantity:</label>
-    <input type="text" name="superpower-product-stock-quantity" alt="superpower-product-stock-quantity-input-box">
+    <input type="text" name="superpower-product-stock-quantity" alt="superpower-product-stock-quantity-input-box " value="{{superpower_product.stock_quantity}}">
 
     <label for="superpower-product-buying-price">Buying Price:</label>
-    <input type="text" name="superpower-product-buying-price" alt="superpower-product-buying-price-input-box">
+    <input type="text" name="superpower-product-buying-price" alt="superpower-product-buying-price-input-box" value="{{superpower_product.buying_price}}">
 
     <label for="superpower-product-selling-price">Selling Price:</label>
-    <input type="text" name="superpower-product-selling-price" alt="superpower-product-selling-price-input-box">
+    <input type="text" name="superpower-product-selling-price" alt="superpower-product-selling-price-input-box " value="{{superpower_product.selling_price}}">
 
     <label for="superpower-product-manufacturer">Manufacturer:</label>
     <select name="manufacturer-id">

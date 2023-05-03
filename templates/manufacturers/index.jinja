@@ -1,0 +1,36 @@
+{% extends "base.jinja" %}
+
+
+{% block content %}
+    <h1>Manufacturers</h1>
+    <p>InfernoPowers is where we put the "super" in superpower...</p>
+
+{# This template shows all of the superpower products and other details #}
+<main>
+    <h1>This is where you can view all of the superpower inventory!</h1>
+    <h1 class="heading">Here is a table of all of our superpower products!</h1>
+    
+    <table class="table-labels">
+        <th>Name:</th>
+        <th>Description:</th>
+        <th>Email Address:</th>
+        <th>Location:</th>
+
+        {% for manufacturer in  manufacturers  %}
+
+        <tr>
+        <td><a href="/manufacturers/{{ manufacturer.id }}">{{ manufacturer.name }}</a></td>
+        {# <td>{{ manufacturer.name }}</td> #}
+        <td>{{ manufacturer.description }}</td>
+        <td>{{ manufacturer.email_address }}</td>
+        <td>{{ manufacturer.location }}</td>
+        <td><a href="/manufacturers/{{ manufacturer.id }}">{{ manufacturer.id }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</main>
+    
+{% endblock %}
+
+
+

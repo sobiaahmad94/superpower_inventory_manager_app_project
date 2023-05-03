@@ -25,6 +25,8 @@ def superpower_product_show_by_id(id):
     superpower_product = superpower_product_repository.select(id)
     return render_template('superpower_products/show_one_specific_superpower_product.jinja', superpower_product = superpower_product)
 
+
+
 # NEW
 # GET '/superpower_products/new'
 @superpower_products_blueprint.route('/superpower_products/new', methods=['GET'])
@@ -67,14 +69,14 @@ def update_superpower_product(id):
     selling_price = request.form['superpower-product-selling-price']
     manufacturer_id = request.form['manufacturer-id']
     manufacturer = manufacturer_repository.select(manufacturer_id)
-    updated_product = SuperpowerProduct(name, description, stock_quantity, buying_price, selling_price, manufacturer)
+    updated_product = SuperpowerProduct(name, description, stock_quantity, buying_price, selling_price, manufacturer, id)
     superpower_product_repository.update(updated_product)
     return redirect('/superpower_products')
 
 # DELETE
 # delete a superpower_product within the superpower_products inventory - superpower_products/<id>/delete
 # will use POST
-@superpower_products_blueprint.route('/superpower_products/<id>/delete', methods=['POST'])
+@superpower_products_blueprint.route('/superpower_products/<id>/delete', methods=['GET'])
 def delete_superpower_product(id):
     superpower_product_repository.delete(id)
     return redirect('/superpower_products')

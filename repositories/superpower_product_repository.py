@@ -49,7 +49,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(superpower_product):
-    sql = "UPDATE superpower_products SET (name, description, stock_quantity, buying_cost, selling_cost, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE superpower_products SET (name, description, stock_quantity, buying_price, selling_price, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [superpower_product.name, superpower_product.description, superpower_product.stock_quantity, superpower_product.buying_price, superpower_product.selling_price, superpower_product.manufacturer.id, superpower_product.id]
     run_sql(sql, values)
 

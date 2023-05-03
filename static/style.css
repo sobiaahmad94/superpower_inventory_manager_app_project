@@ -7,7 +7,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(25, 25, 25);
     /* margin: 0;
-    padding: 0; */
+    padding: 0;  */
 }
 
 body {
@@ -66,6 +66,10 @@ a {
 }
 
 a:hover {
+    color:rgb(24, 157, 132);
+}
+
+.heading {
     color:rgb(24, 157, 132);
 }
 
@@ -141,6 +145,7 @@ button {
     background-color: rgb(24, 157, 132);
     color:rgb(255, 255, 255);
     font-size: 12px;
+    background-color: rgb(24, 157, 132);
 }
 
 button:hover {
@@ -151,6 +156,10 @@ button:hover {
 button:hover {
     color: rgb(255, 255, 255);
     background-color:rgb(215, 67, 67);
+}
+
+select {
+    background-color:rgb(255, 255, 255);
 }
 
 /* any general buttons as I'd like them to be the same except, I just want the add/remove buttons to be a bit bigger */

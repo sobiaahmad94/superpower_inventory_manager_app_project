@@ -1,0 +1,33 @@
+<h1> This shows one specific manufacturer product by its id</h1>
+{% extends "base.jinja" %}
+
+
+{% block content %}
+
+<div>
+    <table class="table-labels">
+        <th>Name:</th>
+        <th>Description:</th>
+        <th>Email Address:</th>
+        <th>Location:</th>
+        
+        <th>Edit:</th>
+        <th>Delete:</th>
+        <tr>
+        <td>{{ manufacturer.name }}</a></td>
+        <td>{{ manufacturer.description }}</td>
+        <td>{{ manufacturer.email_address }}</td>
+        <td>{{ manufacturer.location }}</td>
+        
+        {# <td><a href="www.localhost:4999/superpower_products/<id>/edit">{{ superpower_product.id }}</a></td> #}
+        <td><a href="http://localhost:4999/manufacturers/{{manufacturer.id}}/edit">Edit</a></td>
+        <td><a href="http://localhost:4999/manufacturers/{{manufacturer.id}}/delete">Delete</a></td>
+    </tr>
+    </table>
+
+
+{% endblock %}
+
+
+
+
