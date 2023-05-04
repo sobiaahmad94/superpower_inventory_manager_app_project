@@ -30,22 +30,16 @@ def manufacturers_show_by_id(id):
 # # NEW
 # # GET '/manufacturer/new'
 @manufacturers_blueprint.route('/manufacturers/new', methods=['GET'])
-def new_superpower_product():
+def new_manufacturer():
     manufacturers = manufacturer_repository.select_all()
-    return render_template('manufacturer/add_manufacturer_product.jinja', manufacturers = manufacturers)
+    return render_template('manufacturers/add_manufacturer.jinja', manufacturers = manufacturers)
 
-
-# # # CREATE 
-# # # add a new manufacturer to the manufacturers' inventory - manufacturers/new
-# # # will use GET
-@manufacturers_blueprint.route('/manufacturers', methods=['GET'])
-def create_manufacturer_product():
-    name = request.form['manufacturer-product-name']
+@manufacturers_blueprint.route('/manufacturers', methods=['POST'])
+def create_manufacturer():
+    name = request.form['manufacturer-name']
     description = request.form['manufacturer-description']
-    email_address = request.form['manufacturer-email']
+    email_address = request.form['manufacturer-email-address']
     location = request.form['manufacturer-location']
-    manufacturer_id = request.form['manufacturer-id']
-    manufacturer = manufacturer_repository.select(manufacturer_id)
     new_manufacturer = Manufacturer(name, description, email_address, location)
     manufacturer_repository.save(new_manufacturer)
     return redirect('/manufacturers')
@@ -54,7 +48,7 @@ def create_manufacturer_product():
 # # edit a manufacturer within the manufacturers' inventory - manufacturers/<id>/edit
 # will use POST
 @manufacturers_blueprint.route('/manufacturers/<id>/edit', methods=['GET', 'POST'])
-def edit_manufacturer_product(id):
+def edit_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
     superpower_products = manufacturer_repository.select_all()
     return render_template('manufacturers/edit_manufacturer.jinja', manufacturer = manufacturer, superpower_products = superpower_products)

@@ -20,6 +20,9 @@ manufacturer_repository.save(manufacturer_3)
 manufacturer_4 = Manufacturer("Asteroid Eyes Corporation", "Wear contact lenses that give you 20/20 vision and also lets you gaze at the stars as though they're right beside you.", "asteroid_eyes_support@asteroid_eyes_corp.com", "Dublin, Ireland")
 manufacturer_repository.save(manufacturer_4)
 
+manufacturer_5 = Manufacturer("Asteroid Eyes Corporation", "Wear contact lenses that give you 20/20 vision and also lets you gaze at the stars as though they're right beside you.", "asteroid_eyes_support@asteroid_eyes_corp.com", "Dublin, Ireland")
+manufacturer_repository.save(manufacturer_5)
+
 superpower_product_1 = SuperpowerProduct("Sapphire Glow", "This flower allows you to glow in the dark as you fly.", 70, 12.0, 30.0, manufacturer_1)
 superpower_product_repository.save(superpower_product_1)
 
@@ -32,6 +35,9 @@ superpower_product_repository.save(superpower_product_3)
 superpower_product_4 = SuperpowerProduct("Asteroids Floating Contact Lenses", "These contact lenses let you see the stratosphere and the moon whilst teleporting there!", 0, 30.0, 70.0, manufacturer_4)
 superpower_product_repository.save(superpower_product_4)
 
+superpower_product_5 = SuperpowerProduct("Asteroids Floating Contact Lenses", "These contact lenses let you see the stratosphere and the moon whilst teleporting there!", 0, 30.0, 70.0, manufacturer_5)
+superpower_product_repository.save(superpower_product_5)
+
 
 # Checking that superpower_product select_all() function is working
 
@@ -41,5 +47,14 @@ superpower_product_repository.save(superpower_product_4)
 #     print(superpower_product.manufacturer.__dict__)
 #     print(superpower_product.__dict__)
 
+# Checking to see if manufacturer select_all() function is working as had some issues, I'm trying to fix
 
+# all = manufacturer_repository.select_all()
+
+# for manufacturer in all:
+#     print(manufacturer.__dict__)
+
+# repository = manufacturer_repository()
+# manufacturers = repository.select_all()
+# print(manufacturers)
 

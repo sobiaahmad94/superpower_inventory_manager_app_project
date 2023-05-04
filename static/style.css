@@ -1,11 +1,11 @@
 
  /* fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100&display=swap');
-
-/* all selectors */
+ @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+ 
+ /* all selectors */
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(25, 25, 25);
+    font-family: 'Saira', sans-serif;
     /* margin: 0;
     padding: 0;  */
 }
@@ -15,7 +15,7 @@ body {
 
 }
 
-#logo {
+.logo {
     color: rgb(24, 157, 132);
     text-transform: uppercase;
     font-size: 34px;
@@ -24,13 +24,14 @@ body {
     cursor: pointer;
 }
 
-#logo:hover {
+.logo:hover {
     color: rgb(87, 133, 123);
 }
 
 span {
     font-style: underline; /* why didn't this work? :S I only have one span */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-weight: lighter;
 }
 
 header {
@@ -40,11 +41,38 @@ header {
     color: rgb(255, 255, 255);
 }
 
+.small-logo {
+    /* color: rgb(24, 157, 132); */
+    text-transform: uppercase;
+    font-family: 'Anuphan', sans-serif;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.small-logo {
+    color:rgb(24, 157, 132);
+    font-size: 40px;
+}
+
+.small-logo h2:first-of-type {
+    color: rgb(255, 255, 255);
+}
+
+.heading-align {
+    text-align: center;
+}
 /* navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
 
 nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 8rem;
     list-style: none;
     color: rgb(24, 157, 132);
 }
@@ -66,10 +94,6 @@ a {
 }
 
 a:hover {
-    color:rgb(24, 157, 132);
-}
-
-.heading {
     color:rgb(24, 157, 132);
 }
 
@@ -108,20 +132,39 @@ table {
 .heading {
     display: flex;
     align-items: left;
-    padding: 20px;
     margin: 10px;
-    font-size: 30px;
+    font-size: 40px;
+    color:rgb(24, 157, 132);
 }
 
 h3 {
     color:rgb(24, 157, 132);
 }
 
+h2 {
+    color: rgb(255, 255, 255);
+}
+
 /* forms - applies to the add new book form and the remove book form */
+
+
+
+.low-stock {
+    color: rgb(219, 119, 62)
+}
+
+.out-of-stock {
+    color: rgb(215, 67, 67);
+}
+
+.stock-available {
+    color: rgb(8, 135, 8);
+}
 
 form {
     font-size: 20px;
     padding: 20px;
+    outline: dashed;
 }
 
 form >label {
@@ -134,7 +177,18 @@ form >input {
     align-content: space-between;
     font-size: 20px;
     outline: rgb(24, 157, 132); /* not working so will return to this line */
+    outline: ridge;
+
 }
+
+select {
+    color: rgb(24, 157, 132);
+    display: flex;
+    align-content: space-between;
+    font-size: 20px;
+    outline: rgb(24, 157, 132); /* not working so will return to this line */
+}
+
 
 button {
     text-transform: uppercase;
@@ -162,9 +216,25 @@ select {
     background-color:rgb(255, 255, 255);
 }
 
+.input-button {
+    margin-top: 10px;
+    background-color: rgb(24, 157, 132);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.input-button:hover {
+    margin-top: 10px;
+    background-color: rgb(25, 25, 25);
+    color:rgb(24, 157, 132);
+    cursor: pointer;
+}
+
 /* any general buttons as I'd like them to be the same except, I just want the add/remove buttons to be a bit bigger */
 /* button {
     padding: 10px;
     font-size: 10px;
 }
  */
+
+

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 
+
 from models.Manufacturer import Manufacturer
 
 def save(manufacturer):
@@ -19,7 +20,12 @@ def select_all():
     for row in results:
         manufacturer = Manufacturer(row['name'], row['description'], row['email_address'], row['location'], row['id'])
         manufacturers.append(manufacturer)
+
+        print(manufacturers) # Add this line to print out the list of manufacturers
+
     return manufacturers
+
+select_all()
 
 def select(id):
     manufacturer = None

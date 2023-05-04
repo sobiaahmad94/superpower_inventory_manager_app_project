@@ -17,6 +17,7 @@ def run_sql(sql, values = None):
     finally:
         if conn is not None:
             conn.close()
+    print(results)
     return results
 
 
